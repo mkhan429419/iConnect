@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --destructive-foreground: 0 0% 100%;
+    --secondary-foreground: 340 30% 20%;
+    --popover-foreground: 340 30% 10%;
+    --primary-foreground: 340 30% 15%;
+    --accent-foreground: 340 30% 30%;
+    --muted-foreground: 340 30% 25%;
+    --card-foreground: 340 30% 10%;
+    --destructive: 340 100% 60%;
+    --background: 340 100% 97%;
+    --foreground: 340 30% 10%;
+    --secondary: 340 100% 80%;
+    --popover: 340 100% 98%;
+    --primary: 340 100% 90%;
+    --accent: 340 100% 75%;
+    --border: 340 100% 62%;
+    --muted: 340 100% 83%;
+    --input: 340 100% 70%;
+    --card: 340 100% 98%;
+    --ring: 340 100% 75%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Taviraj", serif; /* Apply Taviraj font */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Manrope", sans-serif;
+    @apply font-heading;
+  }
+}
+
+.cl-formButtonPrimary {
+  background-color: #4a7c7c;
+}
