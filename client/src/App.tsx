@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path="/main"
+          path="/register"
           element={
             <>
               <SignedOut>
@@ -30,20 +30,7 @@ function App() {
           }
         />
         <Route
-          path="/register"
-          element={
-            <>
-              <SignedOut>
-                <Register />
-              </SignedOut>
-              <SignedIn>
-                <Home />
-              </SignedIn>
-            </>
-          }
-        />
-        <Route
-          path="/home"
+          path="/chat"
           element={
             <>
               <SignedIn>
@@ -60,7 +47,7 @@ function App() {
           element={
             <>
               <SignedIn>
-                <Home />
+                <Main />
               </SignedIn>
               <SignedOut>
                 <Login />
