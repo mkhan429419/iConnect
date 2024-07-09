@@ -134,7 +134,10 @@ export default function Home() {
           }`}
         >
           <header className="flex items-center justify-between p-4 border-b">
-            <h2 className="text-xl font-semibold cursor-pointer" onClick={toggleSidebar}>
+            <h2
+              className="text-xl font-semibold cursor-pointer"
+              onClick={toggleSidebar}
+            >
               Tamara
             </h2>
             <div className="flex items-center space-x-4">
