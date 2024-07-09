@@ -12,8 +12,14 @@ import {
 import { Badge } from "../@/components/ui/badge";
 import "../app/globals.css";
 import { SignedIn, SignOutButton, UserButton } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
+import Sidebar from "components/Sidebar";
 
-export default function Home() {
+interface HomeProps {
+  className?: string;
+}
+
+const Home: React.FC<HomeProps> = ({ className }) => {
   const [selectedChat, setSelectedChat] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(() => {
     const savedState = localStorage.getItem("isSidebarOpen");
@@ -35,7 +41,10 @@ export default function Home() {
   return (
     <>
       <div className="flex h-screen">
-        <aside className="w-1/4 bg-white p-4 border-r">
+        <aside className="fixed inset-y-0 left-0 z-10 flex h-full w-16 flex-col bg-background border-r">
+          <Sidebar />
+        </aside>
+        <aside className="w-1/4 bg-white p-4 border-r ml-16">
           <div className="flex flex-col items-center">
             <Avatar className="w-24 h-24 mb-4">
               <AvatarImage src="/placeholder-user.jpg" />
@@ -230,19 +239,9 @@ export default function Home() {
           </aside>
         )}
       </div>
-      <SignedIn>
-        <div className="flex items-center space-x-4">
-          <UserButton />
-          <SignOutButton>
-            <button className="bg-red-500 text-white py-2 px-4 rounded">
-              Sign Out
-            </button>
-          </SignOutButton>
-        </div>
-      </SignedIn>
     </>
   );
-}
+};
 
 function CircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -347,26 +346,6 @@ function PhoneIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
-  );
-}
-
 function SendIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -406,3 +385,25 @@ function VideoIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  );
+}
+
+export default Home;
