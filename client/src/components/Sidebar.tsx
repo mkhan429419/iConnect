@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
         </div>
         <div className="flex flex-col items-center gap-6 pb-6">
           <Link
-            to="#"
+            to="/settings"
             className="group flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <SettingsIcon className="h-5 w-5" />
