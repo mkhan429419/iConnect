@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
             <span className="sr-only">Home</span>
           </Link>
           <Link
-            to="#"
+            to="/search"
             className="group flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <SearchIcon className="h-5 w-5" />
@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
             <span className="sr-only">Chat</span>
           </Link>
           <Link
-            to="#"
+            to="/profile"
             className="group flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <Avatar className="w-6 h-6">

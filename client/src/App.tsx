@@ -11,11 +11,39 @@ import Register from "./pages/Register";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Main from "pages/Main";
+import Search from "pages/Search";
+import Profile from "pages/Profile";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+      <Route
+          path="/profile"
+          element={
+            <>
+              <SignedOut>
+                <Register />
+              </SignedOut>
+              <SignedIn>
+                <Profile />
+              </SignedIn>
+            </>
+          }
+        />
+      <Route
+          path="/search"
+          element={
+            <>
+              <SignedOut>
+                <Register />
+              </SignedOut>
+              <SignedIn>
+                <Search />
+              </SignedIn>
+            </>
+          }
+        />
         <Route
           path="/register"
           element={
