@@ -13,11 +13,25 @@ import Login from "pages/Login";
 import Main from "pages/Main";
 import Search from "pages/Search";
 import Profile from "pages/Profile";
+import Settings from "pages/Settings";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+      <Route
+          path="/settings"
+          element={
+            <>
+              <SignedOut>
+                <Register />
+              </SignedOut>
+              <SignedIn>
+                <Settings />
+              </SignedIn>
+            </>
+          }
+        />
       <Route
           path="/profile"
           element={
